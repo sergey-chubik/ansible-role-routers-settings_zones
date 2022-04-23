@@ -1,0 +1,9 @@
+---
+# tasks file for settings_zones
+- name: settings_zones | set security zones
+  cli_config:
+    config: |
+      set security zones security-zone TRANS address-book address {{ item.name }} {{ item.address }}
+      set security zones security-zone TRANS address-book address-set GLOBAL_FSIN_UPRAVA address {{ item.name }}
+  with_items: "{{ settings_zones_security }}"
+  when: ansible_network_os == 'junos'

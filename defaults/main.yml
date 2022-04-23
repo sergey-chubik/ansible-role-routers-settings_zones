@@ -1,0 +1,7 @@
+---
+# defaults file for settings_zones
+settings_zones_security:
+  - name: MOSKVA
+    address: 10.77.0.0/16
+  - name: TVER_NII
+    address: 10.169.0.0/16
